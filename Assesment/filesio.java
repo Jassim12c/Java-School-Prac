@@ -19,5 +19,15 @@ public class filesio {
         catch(IOException e){
             System.out.println("IO error detected");
         }
+        finally{
+            System.out.println("3li is gay");
+        }
+
+        int[][] lst = new int[5][5];
+        for(int i = 0; i<=lst.length-1; i++){ // i => rows
+            for(int j=0; j<= lst[i].length-1; j++){ // j => columns
+
+            }
+        }
     }
 }
