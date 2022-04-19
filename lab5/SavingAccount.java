@@ -21,4 +21,8 @@ public class SavingAccount extends BankAccount{
             super.withdraw(amount);
         }
     }
+
+    public String toString(){
+        return super.toString() + isAvailable;
+    }
 }
