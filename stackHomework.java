@@ -1,4 +1,6 @@
 import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class stackHomework {
     public static void main(String[] args){
@@ -10,8 +12,19 @@ public class stackHomework {
         stack1.add(92);
         stack1.add(23);
 
+        System.out.println("Input Stack: " + stack1);
         Stack<Integer> stack2 = StackSort(stack1);
         System.out.println("Sorted Stack: " + stack2);
+
+        Queue<Integer> linked_queue = new LinkedList<Integer>();
+        linked_queue.add(10);
+        linked_queue.add(8);
+        linked_queue.add(4);
+        linked_queue.add(23);
+
+        System.out.println("Queue before reverse: " + linked_queue);
+        Queue<Integer> qReverse = QueueReverse(linked_queue);
+        System.out.println("Queue after reverse: " + qReverse);
 
     }
 
@@ -38,5 +51,21 @@ public class stackHomework {
             stack2.push(temp_element);
         }
         return stack2;
+    }
+
+    public static Queue<Integer> QueueReverse(Queue<Integer> givenQueue){
+        Queue<Integer> in_queue = new LinkedList<Integer>();
+        Stack<Integer> temp_stack = new Stack<Integer>();
+
+        while(!givenQueue.isEmpty()) {
+            temp_stack.push(givenQueue.remove());
+
+        }
+
+        while(!temp_stack.empty()) {
+            in_queue.add(temp_stack.pop());
+        }
+
+        return in_queue;
     }
 }
